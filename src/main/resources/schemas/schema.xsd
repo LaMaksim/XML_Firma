@@ -1,0 +1,325 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://bddm/dto/soap"
+           targetNamespace="http://bddm/dto/soap" elementFormDefault="qualified">
+
+        <xs:element name="UplatnicaRequest">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="uplatnica" type="tns:DTO_Uplatnica"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:element name="UplatnicaResponse">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="uplatnica" type="tns:MockType"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:complexType name="DTO_Uplatnica">
+            <xs:sequence>
+                <xs:element name="id" type="xs:string" />
+                <xs:element name="duznikNaziv" type="xs:string" />
+                <xs:element name="svrhaPlacanja" type="xs:string" />
+                <xs:element name="primalacNaziv" type="xs:string" />
+                <xs:element name="datumUplate" type="xs:date" />
+                <xs:element name="datumValute" type="xs:date" />
+                <xs:element name="duznikRacun" type="xs:string" />
+                <xs:element name="modelZaduzenja" type="xs:int" />
+                <xs:element name="pozivNaBrojZaduzenja" type="xs:string" />
+                <xs:element name="racunPoverioca" type="xs:string" />
+                <xs:element name="modelOdobrenja" type="xs:int" />
+                <xs:element name="pozivNaBrojOdobrenja" type="xs:string" />
+                <xs:element name="iznos" type="xs:float" />
+                <xs:element name="oznakaValute" type="xs:string" />
+                <xs:element name="hitnost" type="xs:boolean" />
+            </xs:sequence>
+        </xs:complexType>
+
+
+        <xs:element name="PresekRequest">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="zahtev" type="tns:DTO_PresekZahtev"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:element name="PresekResponse">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element name="uplatnica" type="tns:DTO_PresekZaglavlje"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:element>
+
+        <xs:complexType name="DTO_PresekZahtev">
+            <xs:sequence>
+                <xs:element name="brojRacuna" type="xs:string"/>
+                <xs:element name="datum" type="xs:date"/>
+                <xs:element name="rbrPreseka" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="DTO_PresekZaglavlje">
+            <xs:sequence>
+                <xs:element name="brojRacuna" type="xs:string"/>
+                <xs:element name="datum" type="xs:date"/>
+                <xs:element name="brojPreseka" type="xs:int"/>
+                <xs:element name="prethodnoStanje" type="xs:float"/>
+                <xs:element name="brPromenaUKorist" type="xs:int"/>
+                <xs:element name="ukupnoUKorist" type="xs:float"/>
+                <xs:element name="brPromenaNaTeret" type="xs:int"/>
+                <xs:element name="ukupnoNaTeret" type="xs:float"/>
+                <xs:element name="novoStanje" type="xs:float"/>
+                <xs:element name="stavke" type="tns:DTO_PresekStavka" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+
+        <xs:complexType name="DTO_PresekStavka">
+            <xs:sequence>
+                <xs:element name="duznik" type="xs:string"/>
+                <xs:element name="svrhaPlacanja" type="xs:string"/>
+                <xs:element name="primalac" type="xs:string"/>
+                <xs:element name="datumNaloga" type="xs:date"/>
+                <xs:element name="datumValute" type="xs:date"/>
+                <xs:element name="duznikRacun" type="xs:string"/>
+                <xs:element name="modelZaduzenja" type="xs:int"/>
+                <xs:element name="pozivNaBrojZaduzenja" type="xs:string"/>
+                <xs:element name="primalacRacun" type="xs:string"/>
+                <xs:element name="modelOdobrenja" type="xs:int"/>
+                <xs:element name="pozivNaBrojOdobrenja" type="xs:string"/>
+                <xs:element name="iznos" type="xs:float"/>
+                <xs:element name="smer" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+
+
+        <!--<xs:element name="RtgsRequest">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="zahtev" type="tns:DTO_RTGS"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+        <!--<xs:element name="RtgsResponse">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="uplatnica" type="tns:MockType"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+        <!--<xs:complexType name="DTO_RTGS">-->
+            <!--<xs:sequence>-->
+                <!--<xs:element name="id" type="xs:string"/>-->
+                <!--<xs:element name="bankaDuznikSwift" type="xs:string"/>-->
+                <!--<xs:element name="bankaDuznikRacun" type="xs:string"/>-->
+                <!--<xs:element name="bankaPrimalacSwift" type="xs:string"/>-->
+                <!--<xs:element name="bankaPrimalacRacun" type="xs:string"/>-->
+                <!--<xs:element name="duznikNaziv" type="xs:string" />-->
+                <!--<xs:element name="svrhaPlacanja" type="xs:string" />-->
+                <!--<xs:element name="primalacNaziv" type="xs:string" />-->
+                <!--<xs:element name="datumUplate" type="xs:date"/>-->
+                <!--<xs:element name="datumValute" type="xs:date"/>-->
+                <!--<xs:element name="duznikRacun" type="xs:string" />-->
+                <!--<xs:element name="modelZaduzenja" type="xs:int" />-->
+                <!--<xs:element name="pozivNaBrojZaduzenja" type="xs:string" />-->
+                <!--<xs:element name="racunPoverioca" type="xs:string" />-->
+                <!--<xs:element name="modelOdobrenja" type="xs:int" />-->
+                <!--<xs:element name="pozivNaBrojOdobrenja" type="xs:string" />-->
+                <!--<xs:element name="iznos" type="xs:float" />-->
+                <!--<xs:element name="oznakaValute" type="xs:string" />-->
+            <!--</xs:sequence>-->
+        <!--</xs:complexType>-->
+
+
+        <!--<xs:element name="Mt900Request">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="zahtev" type="tns:DTO_MT900"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+        <!--<xs:element name="Mt900Response">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="uplatnica" type="tns:MockType"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+
+    <!--<xs:complexType name="DTO_MT900">-->
+            <!--<xs:sequence>-->
+                <!--<xs:element name="id" type="xs:string"/>-->
+                <!--<xs:element name="bankaDuznikSwift" type="xs:string"/>-->
+                <!--<xs:element name="bankaDuznikRacun" type="xs:string"/>-->
+                <!--<xs:element name="idNaloga" type="xs:string"/>-->
+                <!--<xs:element name="datumValute" type="xs:date"/>-->
+                <!--<xs:element name="iznos" type="xs:float"/>-->
+                <!--<xs:element name="sifraValute" type="xs:string"/>-->
+            <!--</xs:sequence>-->
+        <!--</xs:complexType>-->
+
+        <!--<xs:element name="Mt910Request">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="zahtev" type="tns:DTO_MT910"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+        <!--<xs:element name="Mt910Response">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="uplatnica" type="tns:MockType"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+
+
+    <!--<xs:complexType name="DTO_MT910">-->
+            <!--<xs:sequence>-->
+                <!--<xs:element name="id" type="xs:string"/>-->
+                <!--<xs:element name="bankaDuznikSwift" type="xs:string"/>-->
+                <!--<xs:element name="bankaDuznikRacun" type="xs:string"/>-->
+                <!--<xs:element name="idNaloga" type="xs:string"/>-->
+                <!--<xs:element name="datumValute" type="xs:date"/>-->
+                <!--<xs:element name="iznos" type="xs:float"/>-->
+                <!--<xs:element name="sifraValute" type="xs:string"/>-->
+            <!--</xs:sequence>-->
+        <!--</xs:complexType>-->
+
+
+        <!--<xs:element name="ClearingRequest">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="zahtev" type="tns:DTO_ClearingZaglavlje"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+        <!--<xs:element name="ClearingResponse">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="uplatnica" type="tns:MockType"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+
+
+        <!--<xs:complexType name="DTO_ClearingZaglavlje">-->
+            <!--<xs:sequence>-->
+                <!--<xs:element name="id" type="xs:string"/>-->
+                <!--<xs:element name="bankaDuznikSwift" type="xs:string"/>-->
+                <!--<xs:element name="bankaDuznikRacun" type="xs:string"/>-->
+                <!--<xs:element name="bankaPrimalacSwift" type="xs:string"/>-->
+                <!--<xs:element name="bankaPrimalacRacun" type="xs:string"/>-->
+                <!--<xs:element name="iznos" type="xs:float"/>-->
+                <!--<xs:element name="oznakaValute" type="xs:string"/>-->
+                <!--<xs:element name="datumValute" type="xs:date"/>-->
+                <!--<xs:element name="datumClearinga" type="xs:date"/>-->
+                <!--<xs:element name="stavke" type="tns:DTO_ClearingStavka" maxOccurs="unbounded" />-->
+            <!--</xs:sequence>-->
+        <!--</xs:complexType>-->
+
+        <!--<xs:complexType name="DTO_ClearingStavka">-->
+            <!--<xs:sequence>-->
+                <!--<xs:element name="id" type="xs:string" />-->
+                <!--<xs:element name="duznikNaziv" type="xs:string" />-->
+                <!--<xs:element name="svrhaPlacanja" type="xs:string" />-->
+                <!--<xs:element name="primalacNaziv" type="xs:string" />-->
+                <!--<xs:element name="datumUplate" type="xs:date" />-->
+                <!--<xs:element name="duznikRacun" type="xs:string" />-->
+                <!--<xs:element name="modelZaduzenja" type="xs:int" />-->
+                <!--<xs:element name="pozivNaBrojZaduzenja" type="xs:string" />-->
+                <!--<xs:element name="racunPoverioca" type="xs:string" />-->
+                <!--<xs:element name="modelOdobrenja" type="xs:int" />-->
+                <!--<xs:element name="pozivNaBrojOdobrenja" type="xs:string" />-->
+                <!--<xs:element name="iznos" type="xs:float" />-->
+                <!--<xs:element name="oznakaValute" type="xs:string" />-->
+            <!--</xs:sequence>-->
+        <!--</xs:complexType>-->
+
+
+        <!--<xs:element name="SwiftRequest">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="zahtev" type="tns:Swift"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+        <!--<xs:element name="SwiftResponse">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="uplatnica" type="tns:Swift"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+
+        <!--<xs:complexType name="Swift">-->
+            <!--<xs:sequence>-->
+                <!--<xs:element name="swift" type="xs:string"/>-->
+            <!--</xs:sequence>-->
+        <!--</xs:complexType>-->
+
+
+        <!--<xs:element name="MessageIdRequest">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="zahtev" type="tns:MockType"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+        <!--<xs:element name="MessageIdResponse">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="uplatnica" type="tns:MessageId"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+
+        <!--<xs:complexType name="MessageId">-->
+            <!--<xs:sequence>-->
+                <!--<xs:element name="id" type="xs:long"/>-->
+            <!--</xs:sequence>-->
+        <!--</xs:complexType>-->
+
+
+        <!--<xs:element name="ClearingTimeRequest">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="zahtev" type="tns:MockType"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+        <!--<xs:element name="ClearingTimeResponse">-->
+            <!--<xs:complexType>-->
+                <!--<xs:sequence>-->
+                    <!--<xs:element name="uplatnica" type="tns:MockType"/>-->
+                <!--</xs:sequence>-->
+            <!--</xs:complexType>-->
+        <!--</xs:element>-->
+
+
+
+        <xs:complexType name="MockType">
+            <xs:sequence>
+                <xs:element name="content" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+
+
+
+</xs:schema>
