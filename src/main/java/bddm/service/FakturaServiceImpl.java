@@ -3,9 +3,11 @@ package bddm.service;
 import bddm.domain.Faktura;
 import bddm.repository.FakturaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class FakturaServiceImpl implements FakturaService {
 
     @Autowired
