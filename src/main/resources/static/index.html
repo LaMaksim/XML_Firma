@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    <!-- basic -->
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
+
+    <!-- Cookies -->
+    <script type="text/javascript" src="node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
+
+
+    <!-- Za bootstrap for angular! -->
+<!--
+    <script type="text/javascript" src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+-->
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>-->
+
+
+    <!--  toaster -->
+    <link href="node_modules/toastr/build/toastr.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="node_modules/toastr/build/toastr.min.js"></script>
+
+    <!-- bootstrap -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Za angular bootstrap komonente
+      nije neophodno na ovoj stranici, tu je cisto kao podsetnik-->
+    <script type="text/javascript" src="node_modules/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <!-- <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script> -->
+    <link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
+
+
+    <!-- Koristi sockjs biblioteku da se konektuje na /stomp endpoint
+       nije neophodno na ovoj stranici, tu je cisto kao podsetnik -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/sockjs/1.0.3/sockjs.min.js"></script>
+    <!-- Koristi stomp biblioteku da se pretplati na brokerov /topic/message endpoint -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+
+    <title>Firma</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">myFirm</a>
+        </div>
+
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a data-toggle="tab" class="active" data-target="#home" > Home </a></li>
+                <li><a data-toggle="tab" data-target="#cards" > My cards </a></li>
+                <li><a data-toggle="tab" data-target="#profile"> Profile </a></li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class='row'>
+
+
+        <!--<ul class="nav nav-tabs">-->
+            <!--<li><a data-toggle="tab" class="active" data-target="#home" > Home </a></li>-->
+            <!--<li><a data-toggle="tab" data-target="#cards" > My cards </a></li>-->
+            <!--<li><a data-toggle="tab" data-target="#profile"> Profile </a></li>-->
+        <!--</ul>-->
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">1111111111 </div>
+            <div id="cards" class="tab-pane fade"> Content under construction... 2222222222 </div>
+            <div id="profile" class="tab-pane fade"> Content under construction... 333333333333 </div>
+        </div>
+
+
+    </div> <!-- <div class='row'> -->
+</div> <!-- <div class="container-fluid">
+ -->
+
+</body>
+</html>
