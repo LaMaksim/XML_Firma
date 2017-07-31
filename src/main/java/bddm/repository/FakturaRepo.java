@@ -21,7 +21,7 @@ public interface FakturaRepo extends Repository<Faktura, Long> {
 
     public List<Faktura> findByDobavljacRacun(String racun);
 
-    public List<Faktura> findByDate(Date date);
+    public List<Faktura> findByDatum(Date date);
 
     public List<Faktura> findByValuta(String valuta);
 

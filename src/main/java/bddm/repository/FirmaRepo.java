@@ -15,7 +15,7 @@ public interface FirmaRepo extends Repository<Firma, Long> {
 
     public Firma findById(Long id);
 
-    public Firma findByPIB(String PIB);
+//    public Firma findByPIB(String PIB);
 
     public Firma findByNaziv(String naziv);
 

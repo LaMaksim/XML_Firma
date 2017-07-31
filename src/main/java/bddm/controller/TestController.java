@@ -7,6 +7,8 @@ import bddm.service.BankaService;
 import bddm.service.FakturaService;
 import bddm.service.FirmaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +20,6 @@ import javax.ws.rs.core.MediaType;
 
 import java.util.Date;
 
-@RequestMapping("/test")
 @Controller
 public class TestController {
 
@@ -34,8 +35,8 @@ public class TestController {
     @RequestMapping(value = "/test",
             method = RequestMethod.GET,
             produces = MediaType.TEXT_PLAIN)
-    public String test(@Context HttpServletRequest request) {
-        return "TEST";
+    public ResponseEntity<String> test(@Context HttpServletRequest request) {
+        return new ResponseEntity<String>("TEST", HttpStatus.OK);
     }
 
     @RequestMapping(value = "/generate",

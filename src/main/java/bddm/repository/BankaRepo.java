@@ -14,9 +14,9 @@ public interface BankaRepo extends Repository<Banka, Long> {
 
     public Banka findById(Long id);
 
-    public Banka findByPort(int port);
+    public Banka findByBankaPort(int port);
 
-    public Banka findByNaziv(String naziv);
+    public Banka findByBankaNaziv(String naziv);
 
     @Modifying
     public void deleteById(Long id);
