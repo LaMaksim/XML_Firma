@@ -19,6 +19,11 @@ public class FirmaServiceImpl implements FirmaService {
     }
 
     @Override
+    public Firma getMojaFirma() {
+        return repo.findByJa(true);
+    }
+
+    @Override
     public List<Firma> getAll() {
         return repo.findAll();
     }

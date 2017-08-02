@@ -29,7 +29,7 @@ public class Faktura {
     private Date datum;
 
     @Column(name =  "FAK_VREDNOST", nullable = false)
-    private Double vrednost;
+    private double vrednost;
 
     @Column(name = "FAK_POREZ", nullable = false)
     private Double porez;
@@ -102,11 +102,11 @@ public class Faktura {
         this.datum = datum;
     }
 
-    public Double getVrednost() {
+    public double getVrednost() {
         return vrednost;
     }
 
-    public void setVrednost(Double vrednost) {
+    public void setVrednost(double vrednost) {
         this.vrednost = vrednost;
     }
 
