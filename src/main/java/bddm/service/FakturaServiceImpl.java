@@ -4,6 +4,7 @@ import bddm.domain.Faktura;
 import bddm.repository.FakturaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import java.util.List;
 
@@ -16,6 +17,11 @@ public class FakturaServiceImpl implements FakturaService {
     @Override
     public Faktura save(Faktura fkt) {
         return repo.save(fkt);
+    }
+
+    @Override
+    public Faktura getOne(Long id) {
+        return repo.findById(id);
     }
 
     @Override
