@@ -10,9 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.core.Context;
@@ -39,15 +37,15 @@ public class TestController {
         return new ResponseEntity<String>("TEST", HttpStatus.OK);
     }
 
+
     @RequestMapping(value = "/generate",
-            method = RequestMethod.POST,
-            consumes = MediaType.APPLICATION_JSON,
+            method = RequestMethod.GET,
             produces = MediaType.TEXT_PLAIN)
-    public String generateTestData(@Context HttpServletRequest request, @RequestBody int port) {
+    public ResponseEntity<String> generateTestData(@Context HttpServletRequest request, @RequestParam("port") Integer port) {
 
         if (port != 8081 && port != 8082 && port != 8083) {
 
-            return "Not OK";
+            return new ResponseEntity<String>("WRONG PORT", HttpStatus.OK);
         } else {
 
             boolean ja;
@@ -117,7 +115,7 @@ public class TestController {
             fakturaService.save(faktura1);
             fakturaService.save(faktura2);
 
-            return "OK";
+            return new ResponseEntity<String>("TEST GENERATED", HttpStatus.OK);
         }
     }
 }
