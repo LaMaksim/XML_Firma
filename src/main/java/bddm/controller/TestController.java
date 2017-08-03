@@ -99,6 +99,7 @@ public class TestController {
             faktura1.setDobavljacRacun("084-0000000008082-82");
             faktura1.setDatum(new Date());
             faktura1.setVrednost(20000.00);
+            faktura1.setPorez(2000.00);
             faktura1.setValuta("DIN");
             faktura1.setSvrhaUplate("Test faktura od 8082 do 8081");
 
@@ -109,6 +110,7 @@ public class TestController {
             faktura2.setDobavljacRacun("084-0000000008083-83");
             faktura2.setDatum(new Date());
             faktura2.setVrednost(15000.00);
+            faktura2.setPorez(1500.00);
             faktura2.setValuta("DIN");
             faktura2.setSvrhaUplate("Test faktura od 8083 do 8081");
 
