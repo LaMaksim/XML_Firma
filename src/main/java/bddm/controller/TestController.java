@@ -73,7 +73,7 @@ public class TestController {
             firma3.setNaziv("Firma8083");
             firma3.setAdresa("Adresa na localhost/8083");
             firma3.setPIB("000008083");
-            firma3.setBrojRacuna("084-0000000008083-83");
+            firma3.setBrojRacuna("085-0000000008083-83");
             firma3.setJa(ja);
             firma3.setPort(8083);
 

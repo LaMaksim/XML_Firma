@@ -3,6 +3,7 @@ package bddm.controller;
 import bddm.domain.Faktura;
 import bddm.dto.rest.DTO_FakturaZaglavlje;
 import bddm.service.FakturaService;
+import bddm.util.Convertor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,13 +41,18 @@ public class FakturaController {
         return new ResponseEntity<Faktura>(retVal, HttpStatus.OK);
     }
 
-    /*
+
     @RequestMapping(value = "/fakture",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON,
             produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<Faktura> create(@RequestBody DTO_FakturaZaglavlje dto) {
-        Faktura retVal
+        Faktura retVal = null;
+        retVal = Convertor.getInstance().DTOtoFaktura(dto);
+
+        fakturaService.save(retVal);
+
+        return new ResponseEntity<Faktura>(retVal, HttpStatus.OK);
     }
-    */
+
 }

@@ -15,7 +15,7 @@ public class DTO_FakturaZaglavlje {
     protected String kupacNaziv;
     protected String kupacAdresa;
     protected String kupacPIB;
-    protected long rbrRacuna;
+    protected long rbrRacuna;   //????
     protected Date datumRacuna;
     protected double vrednostRobe;
     protected double vrednostUsluga;
