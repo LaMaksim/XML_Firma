@@ -81,16 +81,20 @@ public class TestController {
             firmaService.save(firma2);
             firmaService.save(firma3);
 
-            Banka banka1 = new Banka();
-            banka1.setBankaNaziv("Banka8084");
-            banka1.setBankaPort(8084);
+            Banka banka = new Banka();
 
-            Banka banka2 = new Banka();
-            banka2.setBankaNaziv("Banka8085");
-            banka2.setBankaPort(8085);
+            //firme 8081 i 8082 imaju banku na 8084, firma 8083 ima banku 8085
+            if (port != 8083) {
+                banka.setBankaNaziv("Banka8084");
+                banka.setBankaPort(8084);
+            } else {
+                banka.setBankaNaziv("Banka8085");
+                banka.setBankaPort(8085);
+            }
 
-            bankaService.save(banka1);
-            bankaService.save(banka2);
+
+            bankaService.save(banka);
+
 
             Faktura faktura1 = new Faktura();
             faktura1.setDobavljacNaziv("Firma8082");

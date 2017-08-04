@@ -4,6 +4,7 @@ import bddm.domain.Faktura;
 import bddm.domain.Firma;
 import bddm.dto.rest.DTO_FakturaZaglavlje;
 import bddm.dto.soap.DTOUplatnica;
+import bddm.repository.FirmaRepo;
 import bddm.service.FirmaService;
 import com.sun.org.apache.xerces.internal.jaxp.datatype.XMLGregorianCalendarImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import java.util.GregorianCalendar;
 public class Convertor {
 
     @Autowired
-    private FirmaService firmaService;
+    private FirmaRepo firmaRepo;
 
     private static Convertor ourInstance = new Convertor();
 
@@ -50,7 +51,7 @@ public class Convertor {
         hitnost i svrha uplate (opciono) se rucno ubacuju.
      */
     public DTOUplatnica FakturaToDTOUplatnica(Faktura fk) {
-        Firma ja = firmaService.getMojaFirma();
+        Firma ja = firmaRepo.findByJa(true);
         DTOUplatnica retVal = new DTOUplatnica();
 
         retVal.setDuznikNaziv(ja.getNaziv());
