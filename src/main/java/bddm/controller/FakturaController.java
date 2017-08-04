@@ -1,8 +1,11 @@
 package bddm.controller;
 
+import bddm.client.UplatnicaClient;
 import bddm.domain.Faktura;
 import bddm.dto.rest.DTO_FakturaZaglavlje;
 import bddm.dto.soap.DTOUplatnica;
+import bddm.dto.soap.UplatnicaRequest;
+import bddm.dto.soap.UplatnicaResponse;
 import bddm.service.FakturaService;
 import bddm.util.Convertor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +26,9 @@ public class FakturaController {
 
     @Autowired
     private FakturaService fakturaService;
+
+    @Autowired
+    private UplatnicaClient uplatnicaClient;
 
     @RequestMapping(value = "/fakture",
                    method = RequestMethod.GET,
@@ -64,7 +70,14 @@ public class FakturaController {
         Faktura fk = null;
         fk = fakturaService.getOne(id);
 
-        //send SOAP request...
+        UplatnicaResponse response = (UplatnicaResponse) uplatnicaClient.payUplatnica(dtoUplatnica);
+
+        if (response.getUplatnica().getContent() == 0) {
+            return new ResponseEntity<String>("NOT OK", HttpStatus.OK);
+        } else if (response.getUplatnica().getContent() == 2) {
+            return new ResponseEntity<String>("WAIT CLEARING", HttpStatus.OK);
+        }
+
         return new ResponseEntity<String>("OK", HttpStatus.OK);
     }
 
