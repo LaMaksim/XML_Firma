@@ -2,6 +2,7 @@ package bddm.controller;
 
 import bddm.client.UplatnicaClient;
 import bddm.domain.Faktura;
+import bddm.domain.PaymentStatus;
 import bddm.dto.rest.DTO_FakturaZaglavlje;
 import bddm.dto.soap.DTOUplatnica;
 import bddm.dto.soap.UplatnicaRequest;
@@ -27,9 +28,6 @@ public class FakturaController {
 
     @Autowired
     private FakturaService fakturaService;
-
-    @Autowired
-    private UplatnicaClient uplatnicaClient;
 
     @RequestMapping(value = "/fakture",
                    method = RequestMethod.GET,
@@ -85,15 +83,22 @@ public class FakturaController {
         Faktura fk = null;
         fk = fakturaService.getOne(id);
 
-        UplatnicaResponse response = (UplatnicaResponse) uplatnicaClient.payUplatnica(dtoUplatnica);
+        if (fk != null) {
+            PaymentStatus status = fakturaService.pay(fk, dtoUplatnica);
 
-        if (response.getUplatnica().getContent() == 0) {
-            return new ResponseEntity<String>("NOT OK", HttpStatus.OK);
-        } else if (response.getUplatnica().getContent() == 2) {
-            return new ResponseEntity<String>("WAIT CLEARING", HttpStatus.OK);
+            switch(status) {
+                case FAILURE:
+                    return new ResponseEntity<String>("NOT OK", HttpStatus.OK);
+                case SUCCESS:
+                    return new ResponseEntity<String>("OK", HttpStatus.OK);
+                case CLEARING:
+                    return new ResponseEntity<String>("WAIT CLEARING", HttpStatus.OK);
+                default:
+                    return new ResponseEntity<String>("NOT OK", HttpStatus.OK);
+            }
         }
 
-        return new ResponseEntity<String>("OK", HttpStatus.OK);
+        return new ResponseEntity<String>("NOT FOUND", HttpStatus.NOT_FOUND);
     }
 
 

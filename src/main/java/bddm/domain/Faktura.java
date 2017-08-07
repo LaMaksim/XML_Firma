@@ -1,7 +1,5 @@
 package bddm.domain;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -32,7 +30,7 @@ public class Faktura {
     private double vrednost;
 
     @Column(name = "FAK_POREZ", nullable = false)
-    private Double porez;
+    private double porez;
 
     @Column(name = "FAK_VALUTA", nullable = false)
     private String valuta;
@@ -110,11 +108,11 @@ public class Faktura {
         this.vrednost = vrednost;
     }
 
-    public Double getPorez() {
+    public double getPorez() {
         return porez;
     }
 
-    public void setPorez(Double porez) {
+    public void setPorez(double porez) {
         this.porez = porez;
     }
 

@@ -12,12 +12,6 @@ public class UplatnicaClient extends WebServiceGatewaySupport {
 
     public UplatnicaResponse payUplatnica(DTOUplatnica dtoUplatnica) {
 
-        /*
-        UplatnicaResponse response = (UplatnicaResponse) getWebServiceTemplate()
-                .marshalSendAndReceive("http://www.webservicex.com/stockquote.asmx",
-                        dtoUplatnica,
-                        new SoapActionCallback("http://www.webserviceX.NET/GetQuote"));
-        */
         UplatnicaRequest request = new UplatnicaRequest();
         request.setUplatnica(dtoUplatnica);
         UplatnicaResponse response = (UplatnicaResponse) getWebServiceTemplate()

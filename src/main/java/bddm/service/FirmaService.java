@@ -1,6 +1,7 @@
 package bddm.service;
 
 import bddm.domain.Firma;
+import bddm.domain.PaymentStatus;
 
 import java.util.List;
 
@@ -13,4 +14,5 @@ public interface FirmaService {
     List<Firma> getAll();
 
     Firma getOne(Long id);
+
 }
