@@ -10,5 +10,7 @@ public interface BankaService {
 
     List<Banka> getAll();
 
+    Banka getOne(Long id);
+
 
 }

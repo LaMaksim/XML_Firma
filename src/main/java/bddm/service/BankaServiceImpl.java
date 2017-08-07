@@ -22,4 +22,9 @@ public class BankaServiceImpl implements BankaService {
     public List<Banka> getAll() {
         return repo.findAll();
     }
+
+    @Override
+    public Banka getOne(Long id) {
+        return repo.findById(id);
+    }
 }

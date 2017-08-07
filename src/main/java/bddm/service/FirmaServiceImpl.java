@@ -27,4 +27,9 @@ public class FirmaServiceImpl implements FirmaService {
     public List<Firma> getAll() {
         return repo.findAll();
     }
+
+    @Override
+    public Firma getOne(Long id) {
+        return repo.findById(id);
+    }
 }

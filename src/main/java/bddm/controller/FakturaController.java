@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.print.attribute.standard.Media;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Controller
@@ -47,19 +48,33 @@ public class FakturaController {
         Faktura retVal = null;
         retVal = Convertor.getInstance().DTOtoFaktura(dto);
 
-        fakturaService.save(retVal);
+        retVal = fakturaService.save(retVal);
 
         return new ResponseEntity<Faktura>(retVal, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/fakture/{id}",
-                   method = RequestMethod.GET,
-                   produces = MediaType.APPLICATION_JSON)
+                method = RequestMethod.GET,
+                produces = MediaType.APPLICATION_JSON)
     public ResponseEntity<Faktura> readOne(@PathVariable Long id) {
         Faktura retVal = null;
         retVal = fakturaService.getOne(id);
 
         return new ResponseEntity<Faktura>(retVal, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/fakture/{id}",
+                method = RequestMethod.PUT,
+                consumes = MediaType.APPLICATION_JSON,
+                produces = MediaType.APPLICATION_JSON)
+    public ResponseEntity<Faktura> update(@PathVariable Long id, @RequestBody Faktura faktura) {
+        if (faktura != null && id == faktura.getId()) {
+            Faktura retVal = fakturaService.save(faktura);
+
+            return new ResponseEntity<Faktura>(retVal, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<Faktura>(faktura, HttpStatus.BAD_REQUEST);
     }
 
     @RequestMapping(value = "/fakture/{id}",

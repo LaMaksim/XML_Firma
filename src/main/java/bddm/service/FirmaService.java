@@ -9,5 +9,8 @@ public interface FirmaService {
     Firma save(Firma frm);
 
     Firma getMojaFirma();
+
     List<Firma> getAll();
+
+    Firma getOne(Long id);
 }
