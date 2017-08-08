@@ -40,6 +40,7 @@ public class FakturaServiceImpl implements FakturaService {
     public PaymentStatus pay(Faktura faktura, DTOUplatnica uplatnica) {
         UplatnicaResponse response = client.payUplatnica(uplatnica);
 
+        System.out.println(response.getUplatnica().getContent());
         switch (response.getUplatnica().getContent()) {
             case 0:
                 return PaymentStatus.FAILURE;
