@@ -17,7 +17,7 @@
 
 
 
-    modul.directive("fakturaNovaDirective", function () {
+    angular.module("FakturaNovaModule").directive("fakturaNovaDirective", function () {
         var directive = {};
         directive.restrict = 'EA';
         directive.templateUrl = 'directives/FaktureSlanje/nove_fakture.html';

@@ -1,1 +1,118 @@
-fakture nove
+<div class="input-group">
+    <span class="input-group-addon" id="broj-racuna">`Broj racuna</span>
+    <input type="text" class="form-control" placeholder="Broj racuna" aria-describedby="broj-racuna">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="naziv-kupca">Naziv kupca</span>
+    <input type="text" class="form-control" placeholder="Naziv kupca" aria-describedby="naziv-kupca">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="adresa-kupca">Adresa kupca</span>
+    <input type="text" class="form-control" placeholder="Adresa kupca" aria-describedby="adresa-kupca">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="pib-kupca">PIB kupca</span>
+    <input type="text" class="form-control" placeholder="PIB kupca" aria-describedby="pib-kupca">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="vrednost-robe">`Vrednost robe</span>
+    <input type="text" class="form-control" placeholder="Vrednost robe" aria-describedby="vrednost-robe">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="vrednost-usluga">`Vrednost usluga</span>
+    <input type="text" class="form-control" placeholder="Vrednost usluga" aria-describedby="vrednost-usluga">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="ukupan-rabat">`Ukupan rabat</span>
+    <input type="text" class="form-control" placeholder="Ukupan rabat" aria-describedby="ukupan-rabat">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="ukupan-porez">`Ukupan porez</span>
+    <input type="text" class="form-control" placeholder="Ukupan porez" aria-describedby="ukupan-porez">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="oznaka-valute">`Oznaka valute</span>
+    <input type="text" class="form-control" placeholder="Oznaka valute" aria-describedby="oznaka-valute">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="iznos-uplate">`Iznos uplate</span>
+    <input type="text" class="form-control" placeholder="Iznos uplate" aria-describedby="iznos-uplate">
+</div>
+<div class="input-group">
+    <span class="input-group-addon" id="datum">Datum</span>
+    <input type="text" class="form-control" placeholder="Datum" aria-describedby="datum">
+</div>
+
+<table>
+    <tr>
+        <th> Rbr </th>
+        <th> Naziv </th>
+        <th> Vrsta </th>
+        <th> Kolicina </th>
+        <th> Jedinica mere </th>
+        <th> Jedinicna cena </th>
+        <th> Vrednost </th>
+        <th> Procenat rabata </th>
+        <th> Ukupno rabata </th>
+        <th> Umanjeno za rabat </th>
+        <th> Porez </th>
+    </tr>
+</table>
+
+<form name="formStavkaFakture">
+<h3> Unos nove stavke fakture </h3>
+    <div class="input-group">
+        <span class="input-group-addon" id="naziv">Naziv</span>
+        <input type="text" class="form-control" placeholder="Datum" aria-describedby="naziv">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="vrsta">Vrsta</span>
+        <select class="form-control" placeholder="vrsta" aria-describedby="vrsta">
+            <option> Roba </option>
+            <option> Usluga </option>
+        </select>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="kolicina">Kolicina</span>
+        <input type="number" class="form-control" placeholder="Kolicina" aria-describedby="kolicina">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="jedinica-mere">Jedinica mere</span>
+        <input type="text" class="form-control" placeholder="Jedinica mere" aria-describedby="jedinica-mere">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="jedinica-cene">Jedinicna cena</span>
+        <input type="text" class="form-control" placeholder="Jedinicna cena" aria-describedby="jedinica-cene">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="vrednost">Vrednost</span>
+        <input type="text" class="form-control" placeholder="vrednost" aria-describedby="vrednost">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="procenat-rabata">Procenat rabata</span>
+        <input type="text" class="form-control" placeholder="Procenat rabata" aria-describedby="procenat-rabata">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="iznos-rabata">iznos rabata</span>
+        <input type="text" class="form-control" placeholder="iznos rabata" aria-describedby="iznos-rabata">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="bez-rabata">Umanjeno za rabat</span>
+        <input type="text" class="form-control" placeholder="Umanjeno za rabat" aria-describedby="bez-rabata">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon" id="ukupan-porez-stavke">Ukupan porez</span>
+        <input type="text" class="form-control" placeholder="Ukupan porez" aria-describedby="ukupan-porez-stavke">
+    </div>
+
+
+</form>
+
+
+
+
+
+
+
+
+

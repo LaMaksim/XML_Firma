@@ -17,7 +17,7 @@
 
 
 
-    modul.directive("uplatnicaModalDirective", function () {
+    angular.module("UplatnicaModule").directive("uplatnicaModalDirective", function () {
         var directive = {};
         directive.restrict = 'EA';
         directive.templateUrl = 'directives/Uplatnica/uplatnica.html';

@@ -17,7 +17,7 @@
 
 
 
-    modul.directive("preseciDirective", function () {
+    angular.module("PresekModule").directive("preseciDirective", function () {
         var directive = {};
         directive.restrict = 'EA';
         directive.templateUrl = 'directives/Preseci/preseci.html';

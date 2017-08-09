@@ -17,7 +17,7 @@
 
 
 
-    modul.directive("faktureSveDirective", function () {
+    angular.module("FaktureSveModule").directive("faktureSveDirective", function () {
         var directive = {};
         directive.restrict = 'EA';
         directive.templateUrl = 'directives/FakturePrikaz/fakture.html';
