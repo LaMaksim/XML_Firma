@@ -71,31 +71,44 @@ public class DTOUplatnica {
 
     @XmlElement(required = true)
     protected String id;
+
     @XmlElement(required = true)
     protected String duznikNaziv;
+
     @XmlElement(required = true)
     protected String svrhaPlacanja;
+
     @XmlElement(required = true)
     protected String primalacNaziv;
+
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar datumUplate;
+
     @XmlElement(required = true)
     @XmlSchemaType(name = "date")
     protected XMLGregorianCalendar datumValute;
+
     @XmlElement(required = true)
     protected String duznikRacun;
+
     protected int modelZaduzenja;
+
     @XmlElement(required = true)
     protected String pozivNaBrojZaduzenja;
+
     @XmlElement(required = true)
     protected String racunPoverioca;
+
     protected int modelOdobrenja;
+
     @XmlElement(required = true)
     protected String pozivNaBrojOdobrenja;
-    protected float iznos;
+
+    protected double iznos;
     @XmlElement(required = true)
     protected String oznakaValute;
+
     protected boolean hitnost;
 
     /**
@@ -374,7 +387,7 @@ public class DTOUplatnica {
      * Gets the value of the iznos property.
      * 
      */
-    public float getIznos() {
+    public double getIznos() {
         return iznos;
     }
 
@@ -382,7 +395,7 @@ public class DTOUplatnica {
      * Sets the value of the iznos property.
      * 
      */
-    public void setIznos(float value) {
+    public void setIznos(double value) {
         this.iznos = value;
     }
 
