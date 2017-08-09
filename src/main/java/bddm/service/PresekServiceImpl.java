@@ -5,7 +5,9 @@ import bddm.dto.soap.DTOPresekZaglavlje;
 import bddm.dto.soap.DTOPresekZahtev;
 import bddm.repository.BankaRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class PresekServiceImpl implements PresekService {
 
     @Autowired
