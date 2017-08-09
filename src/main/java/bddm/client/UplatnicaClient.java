@@ -15,7 +15,6 @@ public class UplatnicaClient extends WebServiceGatewaySupport {
         UplatnicaRequest request = new UplatnicaRequest();
         request.setUplatnica(dtoUplatnica);
         UplatnicaResponse response = (UplatnicaResponse) getWebServiceTemplate()
-                //.marshalSendAndReceive("http://localhost:8084/ws/bussinessBank", request);
                 .marshalSendAndReceive("http://localhost:8084/ws", request);
         return response;
 

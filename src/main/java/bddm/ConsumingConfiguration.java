@@ -1,5 +1,6 @@
 package bddm;
 
+import bddm.client.IzvodClient;
 import bddm.client.UplatnicaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -35,6 +36,16 @@ public class ConsumingConfiguration {
     public UplatnicaClient uplatnicaClient(Jaxb2Marshaller jaxb2Marshaller) {
         UplatnicaClient client = new UplatnicaClient();
         //client.setDefaultUri("http://localhost:8084/ws/bussinessBank");
+        client.setDefaultUri("http://localhost:8084/ws");
+        client.setMarshaller(jaxb2Marshaller);
+        client.setUnmarshaller(jaxb2Marshaller);
+
+        return client;
+    }
+
+    @Bean
+    public IzvodClient izvodClient(Jaxb2Marshaller jaxb2Marshaller) {
+        IzvodClient client = new IzvodClient();
         client.setDefaultUri("http://localhost:8084/ws");
         client.setMarshaller(jaxb2Marshaller);
         client.setUnmarshaller(jaxb2Marshaller);
