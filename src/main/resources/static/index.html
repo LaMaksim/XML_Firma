@@ -29,7 +29,8 @@
     <script type="text/javascript" src="node_modules/toastr/build/toastr.min.js"></script>
 
     <!-- bootstrap -->
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="style/bootswatch/solar.min.css" rel="stylesheet">
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Za angular bootstrap komonente
@@ -48,23 +49,33 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 
 
+    <!--<script type="text/javascript" src="services/Toastr/ToastrWrapper.js"></script>-->
+
+    <script type="text/javascript" src="services/Toastr/ToastrWrapper.js"></script>
+    <script type="text/javascript" src="directives/Uplatnica/uplatnica.js"></script>
+    <script type="text/javascript" src="directives/FakturePrikaz/fakture.js"></script>
+    <script type="text/javascript" src="directives/FaktureSlanje/nove_fakture.js"></script>
+    <script type="text/javascript" src="directives/Preseci/preseci.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+
     <title>Firma</title>
 </head>
-<body>
+<body ng-controller="FirmController as firmCtrl">
 
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand">myFirm</a>
+            <a class="navbar-brand">Firm89</a>
         </div>
 
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a data-toggle="tab" class="active" data-target="#home" > Home </a></li>
-                <li><a data-toggle="tab" data-target="#cards" > My cards </a></li>
-                <li><a data-toggle="tab" data-target="#profile"> Profile </a></li>
+                <li><a data-toggle="tab" class="active" data-target="#home" > Pocetna </a></li>
+                <li><a data-toggle="tab" data-target="#fakture" > Fakture </a></li>
+                <li><a data-toggle="tab" data-target="#preseci"> Preseci </a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
 
@@ -74,16 +85,10 @@
 <div class="container-fluid">
     <div class='row'>
 
-
-        <!--<ul class="nav nav-tabs">-->
-            <!--<li><a data-toggle="tab" class="active" data-target="#home" > Home </a></li>-->
-            <!--<li><a data-toggle="tab" data-target="#cards" > My cards </a></li>-->
-            <!--<li><a data-toggle="tab" data-target="#profile"> Profile </a></li>-->
-        <!--</ul>-->
         <div class="tab-content">
-            <div id="home" class="tab-pane fade in active">1111111111 </div>
-            <div id="cards" class="tab-pane fade"> Content under construction... 2222222222 </div>
-            <div id="profile" class="tab-pane fade"> Content under construction... 333333333333 </div>
+            <div id="home" class="tab-pane fade in active" faktura-nova-directive>  </div>
+            <div id="fakture" class="tab-pane fade" fakture-sve-directive>  </div>
+            <div id="preseci" class="tab-pane fade" preseci-directive>  </div>
         </div>
 
 
