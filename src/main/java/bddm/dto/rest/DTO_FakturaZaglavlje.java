@@ -26,7 +26,7 @@ public class DTO_FakturaZaglavlje {
     protected double ukupno;
     protected String dobavljacRacun;
     protected Date datumValute;
-    protected List<DTO_FakturaZaglavlje> stavke;
+    protected List<DTO_FakturaStavka> stavke;
 
     public DTO_FakturaZaglavlje() {
     }
@@ -175,11 +175,11 @@ public class DTO_FakturaZaglavlje {
         this.datumValute = datumValute;
     }
 
-    public List<DTO_FakturaZaglavlje> getStavke() {
+    public List<DTO_FakturaStavka> getStavke() {
         return stavke;
     }
 
-    public void setStavke(List<DTO_FakturaZaglavlje> stavke) {
+    public void setStavke(List<DTO_FakturaStavka> stavke) {
         this.stavke = stavke;
     }
 }

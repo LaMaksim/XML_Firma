@@ -1,1 +1,39 @@
-preseci
+<h3> Izvod za datum </h3>
+<div class="col-xs-6">
+    <p class="input-group">
+        <span class="input-group-addon" id="sizing-addon1"> Datum izvoda </span>
+        <input type="text" name='izvodDatepicker' class="form-control" uib-datepicker-popup="{{datepickers.format}}"
+               ng-model="izvodDate"
+               is-open="datepickers.opened"
+               datepicker-options="datepickers.dateOptions"
+               close-text="Close" readonly required/>
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="datepickers.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </p>
+</div>
+<button class="btn btn-default col-xs-2" ng-click="search()">
+    <span class="glyphicon glyphicon-zoom-in"></span>
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

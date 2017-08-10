@@ -9,6 +9,8 @@
     var modul = angular.module("FaktureSveModule", ['UplatnicaModule']);
 
     var FaktureAllController = function ($scope, $log,$resource,ModalsFactory) {
+        var faktureResource = $resource("fakture/:id");
+        $scope.fakture = faktureResource.query();
 
 
 

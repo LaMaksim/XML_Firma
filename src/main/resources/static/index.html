@@ -29,7 +29,7 @@
     <script type="text/javascript" src="node_modules/toastr/build/toastr.min.js"></script>
 
     <!-- bootstrap -->
-    <!--<link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="style/bootswatch/solar.min.css" rel="stylesheet">
     <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -39,7 +39,7 @@
     <script type="text/javascript" src="node_modules/angular-sanitize/angular-sanitize.min.js"></script>
     <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
     <!-- <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script> -->
-    <link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
+    <link href="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet"/>
 
 
     <!-- Koristi sockjs biblioteku da se konektuje na /stomp endpoint
@@ -51,7 +51,10 @@
 
     <!--<script type="text/javascript" src="services/Toastr/ToastrWrapper.js"></script>-->
 
+    <link href="style/xml.css" rel="stylesheet"/>
     <script type="text/javascript" src="service/Toastr/ToastrWrapper.js"></script>
+
+
     <script type="text/javascript" src="directives/Uplatnica/uplatnica.js"></script>
     <script type="text/javascript" src="directives/FakturePrikaz/fakture.js"></script>
     <script type="text/javascript" src="directives/FaktureSlanje/nove_fakture.js"></script>
@@ -75,13 +78,13 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a data-toggle="tab" class="active" data-target="#home" > Pocetna </a></li>
                 <li><a data-toggle="tab" data-target="#fakture" > Fakture </a></li>
-                <li><a data-toggle="tab" data-target="#preseci"> Preseci </a></li>
+                <li><a data-toggle="tab" data-target="#preseci"> Izvodi </a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
 
     </div>
 </nav>
-<div class="container-fluid">
+<div class="container">
     <div class='row'>
 
         <div class="tab-content">
