@@ -13,10 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.print.attribute.standard.Media;
 import javax.ws.rs.core.MediaType;
@@ -38,6 +35,7 @@ public class FakturaController {
         return new ResponseEntity<List<Faktura>>(retVal, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/fakture",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON,
@@ -78,7 +76,7 @@ public class FakturaController {
     @RequestMapping(value = "/fakture/{id}",
             method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON,
-            produces = MediaType.APPLICATION_JSON)
+            produces = MediaType.TEXT_PLAIN)
     public ResponseEntity<String> payOne(@PathVariable Long id, @RequestBody DTOUplatnica dtoUplatnica) {
         Faktura fk = null;
         fk = fakturaService.getOne(id);

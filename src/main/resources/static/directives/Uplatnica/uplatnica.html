@@ -1,1 +1,95 @@
-uplatnica
+<div class="modal-header">
+
+    <h4 class="modal-title" id="uplatnicaTitle"> Uplatnica za fakturu </h4>
+</div>
+
+<form name="uplatnicaForma" novalidate>
+
+<div class="modal-body">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="col-xs-11">
+
+                <div class="form-group">
+                    <label for="uplatilac-naziv">Duznik - nalagodavac</label>
+                    <textarea class="form-control" style="resize: none" rows="3" id="uplatilac-naziv" placeholder="Duznik" ng-model="uplatnica.duznikNaziv" disabled></textarea>
+                    <!--<input type="text" class="form-control" id="uplatilac-naziv" placeholder="Duznik" ng-model="uplatnica.duznikNaziv" disabled>-->
+                </div>
+                <div class="form-group">
+                    <label for="uplata-svrha">Svrha placanja </label>
+                    <input type="text" class="form-control" id="uplata-svrha" placeholder="Svrha" ng-model="uplatnica.svrhaPlacanja" required>
+                </div>
+                <div class="form-group">
+                    <label for="primalac-naziv">Poverilac - primalac</label>
+                    <!--<input type="text" class="form-control" id="primalac-naziv" placeholder="Primalac" ng-model="uplatnica.primalacNaziv" disabled>-->
+                    <textarea class="form-control" style="resize: none" rows="3" id="primalac-naziv" placeholder="Primalac" ng-model="uplatnica.primalacNaziv" disabled></textarea>
+                </div>
+
+                <div class="col-xs-8 col-xs-offset-4">
+                    {{currDate|date:'dd.MM.yyyy'}}
+                    <hr class="no_margin">
+                    <span style="float:right">Mesto i datum prijema</span>
+                </div>
+            </div>
+        </div>
+        <!-- vertikalna pregrada -->
+
+        <div class="col-xs-6 lineSide" >
+            <div class="col-xs-11 col-xs-offset-1">
+                <div class="col-xs-5 form-group">
+                    <label for="sifra-placanja">Sifra placanja</label>
+                    <input type="text" pattern="[0-9]+" class="form-control" id="sifra-placanja" placeholder="Sifra placanja" ng-model="ninasta"  required>
+                </div>
+                <div class="col-xs-3 form-group">
+                    <label for="uplatnica-valuta">Valuta </label>
+                    <input type="text" class="form-control" id="uplatnica-valuta" placeholder="Valuta" ng-model="uplatnica.oznakaValute" disabled>
+                </div>
+                <div class="col-xs-4 form-group">
+                    <label for="uplatnica-iznos">Iznos</label>
+                    <input type="text"  class="form-control" id="uplatnica-iznos" placeholder="Iznos" ng-model="uplatnica.iznos" disabled>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label for="platnica-racun-duznik">Racun duznika(nalagodavca)</label>
+                    <input type="text" pattern="([0-9]+\-)*[0-9]+" class="form-control" id="platnica-racun-duznik" placeholder="Racun duznika" ng-model="uplatnica.duznikRacun" disabled>
+                </div>
+                <div class="col-xs-3 form-group">
+                    <label for="model-zaduzenja">Model</label>
+                    <input type="text" pattern="[0-9]+" class="form-control" id="model-zaduzenja" placeholder="Model" ng-model="uplatnica.modelZaduzenja" required>
+                </div>
+                <div class="col-xs-9 form-group">
+                    <label for="poziv-na-broj-zaduzenja">Poziv na broj(zaduzenje)</label>
+                    <input type="text" pattern="([0-9]+\-)*[0-9]+" class="form-control" id="poziv-na-broj-zaduzenja" placeholder="Poziv na broj" ng-model="uplatnica.pozivNaBrojZaduzenja" required>
+                </div>
+                <div class="col-xs-12 form-group">
+                    <label for="uplatnica-racun-primalac">Racun poverioca- primaoca</label>
+                    <input type="text" pattern="([0-9]+\-)*[0-9]+" class="form-control" id="uplatnica-racun-primalac" placeholder="Racun poverioca" ng-model="uplatnica.racunPoverioca" disabled>
+                </div>
+                <div class="col-xs-3 form-group">
+                    <label for="model-odobrenja">Model</label>
+                    <input type="text" pattern="[0-9]+" class="form-control" id="model-odobrenja" placeholder="Model" ng-model="uplatnica.modelOdobrenja" required>
+                </div>
+                <div class="col-xs-9 form-group">
+                    <label for="poziv-na-broj-odobrenja">Poziv na broj (odobrenje)</label>
+                    <input type="text" pattern="([0-9]+\-)*[0-9]+" class="form-control" id="poziv-na-broj-odobrenja" placeholder="Poziv na broj " ng-model="uplatnica.pozivNaBrojOdobrenja" required>
+                </div>
+
+                <div class="col-xs-7">
+                    {{currDate|date:'dd.MM.yyyy'}}
+                    <hr class="no_margin"/>
+                    <span>Datum valute</span>
+                </div>
+                <div class="col-xs-5">
+                    <input type="checkbox" ng-model="uplatnica.hitno"/> Hitno
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- content -->
+
+
+
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal" id="uplatnicaOk" ng-click="ok()" ng-disabled="uplatnicaForma.$invalid">Ok</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal" id="uplatnicaCancel" ng-click="cancel()">Cancel</button>
+</div>
+</form>

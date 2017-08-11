@@ -1,2 +1,25 @@
 <h2> Neplacene fakture </h2>
+<table class="table table-hover">
+    <tr>
+        <th> Naziv prodavca </th>
+        <th> Adresa prodavca </th>
+        <th> Racun prodavca </th>
+        <th> Iznos za uplatu </th>
+        <th> Datum </th>
+        <th> Uplati </th>
+    </tr>
+    <tr ng-repeat="faktura in fakture">
+        <td> {{faktura.dobavljacNaziv}}</td>
+        <td> {{faktura.dobavljacAdresa}}</td>
+        <td> {{faktura.dobavljacRacun}}</td>
+        <td> {{faktura.vrednost}}</td>
+        <td> {{faktura.datum | date}}</td>
+        <td> <button class="btn btn-default" ng-click="uplatnicaDialogShow(faktura)">
+            <span class="glyphicon glyphicon-pencil"></span>
+        </button></td>
+    </tr>
+</table>
+
+
+
 <uplatnica-modal></uplatnica-modal>

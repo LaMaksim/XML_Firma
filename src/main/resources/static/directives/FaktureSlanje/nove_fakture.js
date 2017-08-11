@@ -8,7 +8,7 @@
     "use strict";
     var modul = angular.module("FakturaNovaModule", []);
 
-    var FakturaNovaController = function ($scope, $log,$resource,ModalsFactory) {
+    var FakturaNovaController = function ($scope, $log,$http,ToastrWrapper) {
 
         $scope.setupItem = function(){
             $scope.novaStavka = {};
@@ -39,18 +39,34 @@
             $scope.novaFaktura.dobavljacNaziv = $scope.$root.user.naziv;
             $scope.novaFaktura.dobavljacAdresa = $scope.$root.user.adresa;
             $scope.novaFaktura.dobavljacPIB = $scope.$root.user.pib;
+            $scope.novaFaktura.dobavljacRacun = $scope.$root.user.brojRacuna;
 
             $scope.novaFaktura.vrednostRobe = $scope.fakturaVrednostSegmenta("roba");
             $scope.novaFaktura.vrednostUsluga = $scope.fakturaVrednostSegmenta("usluga");
             $scope.novaFaktura.vrednostUkupno = $scope.fakturaVrednostUkupno();
             $scope.novaFaktura.vrednostRabat = $scope.fakturaVrednostRabat();
             $scope.novaFaktura.vrednostPorez = -1;
-            $scope.novaFaktura = $scope.fakturaUkupno();
+            $scope.novaFaktura.ukupno = $scope.fakturaUkupno();
 
+            var targetPort = $scope.currPartner.port;
+            var targetUrl = "http://localhost:"+targetPort+"/fakture";
 
-            $scope.setupTicket();
+            $http({
+                url:targetUrl,
+                method:'POST',
+                data:$scope.novaFaktura
+            }).then(
+                function successNovaFaktura(data, status) {
+                    ToastrWrapper.toaster('success','Faktura je poslata');
+                    $scope.setupTicket();
+                },function errorNovaFaktura(data, status) {
+                    ToastrWrapper.toaster('error','Ne mozemo poslati fakturu');
+                    $scope.setupTicket();
+                }
+            );
+            // $scope.setupTicket();
         };
-        $scope.newTicket();
+        $scope.setupTicket();
 
         $scope.newItem = function () {
           $scope.novaStavka.vrednost = $scope.stavkaVrednost($scope.novaStavka);
@@ -106,7 +122,7 @@
 
 
     };
-    FakturaNovaController.$inject = ['$scope', '$log','$resource','ToastrWrapper'];
+    FakturaNovaController.$inject = ['$scope', '$log','$http','ToastrWrapper'];
 
 
 

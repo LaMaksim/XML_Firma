@@ -99,7 +99,7 @@
 
     <div class="form-group">
         <div class="col-sm-offset-3 col-sm-4">
-            <button class="btn btn-default"  ng-disabled="nova_faktura.$invalid">Posalji fakturu</button><!-- ng-click="logCtrl.logging()" -->
+            <button class="btn btn-default"  ng-disabled="nova_faktura.$invalid" ng-click="newTicket()">Posalji fakturu</button><!-- ng-click="logCtrl.logging()" -->
         </div>
     </div>
 
@@ -124,11 +124,11 @@
         <td> {{stavka.vrsta}} </td>
         <td> {{stavka.kolicina}} </td>
         <td> {{stavka.jedinicaMere}} </td>
-        <td> {{stavka.jedinicnaCena}}RSD </td>
-        <td> {{stavkaVrednost(stavka)}}RSD </td>
+        <td> {{stavka.jedinicnaCena}}DIN </td>
+        <td> {{stavkaVrednost(stavka)}}DIN </td>
         <td> {{stavkaProcenatRabata(stavka)}}% </td>
-        <td> {{stavka.iznosRabata}}RSD </td>
-        <td> {{stavkaUmanjenoRabatom(stavka)}}RSD </td>
+        <td> {{stavka.iznosRabata}}DIN </td>
+        <td> {{stavkaUmanjenoRabatom(stavka)}}DIN </td>
         <td> <button class="btn btn-default" ng-click="remove(stavka)">
             <span class="glyphicon glyphicon-minus"></span>
         </button> </td>

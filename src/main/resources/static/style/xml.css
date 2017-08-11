@@ -1,3 +1,15 @@
 label.left_texted{
     text-align:left !important;
 }
+
+
+hr.no_margin{
+    margin: 0px;
+}
+
+.lineSide{
+    border-left-width: 1px;
+    border-left-color: white;
+    border-left-style: solid;
+    /*text-align: center;*/
+}
