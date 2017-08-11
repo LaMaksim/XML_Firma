@@ -12,7 +12,7 @@ public class IzvodClient extends WebServiceGatewaySupport {
     public PresekResponse requirePresek(DTOPresekZahtev dto, int port) {
         PresekRequest request = new PresekRequest();
         request.setZahtev(dto);
-        String uri = "http://localhost" + port + "/ws";
+        String uri = "http://localhost:" + port + "/ws";
         PresekResponse response = (PresekResponse) getWebServiceTemplate()
                 .marshalSendAndReceive(uri, request);
 
