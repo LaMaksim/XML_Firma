@@ -48,6 +48,7 @@ public class FakturaServiceImpl implements FakturaService {
                 repo.delete(faktura);
                 return PaymentStatus.SUCCESS;
             case 2:
+                repo.delete(faktura);
                 return PaymentStatus.CLEARING;
 
         }

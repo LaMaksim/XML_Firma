@@ -1,4 +1,4 @@
-<h3> Izvod za datum </h3>
+<h3> Presci za datum </h3>
 <div class="col-xs-6">
     <p class="input-group">
         <span class="input-group-addon" id="sizing-addon1"> Datum izvoda </span>
@@ -15,6 +15,174 @@
 <button class="btn btn-default col-xs-2" ng-click="search()">
     <span class="glyphicon glyphicon-zoom-in"></span>
 </button>
+
+<table class="table table-hover" ng-if="presek">
+    <tr>
+        <td>
+            Broj racuna
+        </td>
+        <td>
+            {{presek.brojRacuna}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Prethodno stanje
+        </td>
+        <td>
+            {{presek.prethodnoStanje}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Broj promena u korist
+        </td>
+        <td>
+            {{presek.brPromenaUKorist}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Ukupno u korist
+        </td>
+        <td>
+            {{presek.ukupnoUKorist}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Broj promena na stetu
+        </td>
+        <td>
+            {{presek.brPromenaNaTeret}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Ukupno na teret
+        </td>
+        <td>
+            {{presek.ukupnoNaTeret}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Novo stanje
+        </td>
+        <td>
+            {{presek.novoStanje}}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Broj izvoda
+        </td>
+        <td>
+            {{rbrPreseka}}
+        </td>
+    </tr>
+</table>
+<br><br>
+    <div ng-if="rbrPreseka>0">
+        <div class="row">
+            <div class="col-xs-6">
+                <h3> Stranica br:{{currentPage}}</h3>
+            </div>
+            <div class="col-xs-6">
+                <ul uib-pagination boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+                    total-items="rbrPreseka" items-per-page="1" force-ellipses="true" ng-model="currentPage"  max-size="5" ></ul>
+            </div>
+        </div>
+        <!--<ul uib-pager total-items="rbrPreseka*10" ng-model="currentPage"-->
+            <!--next-text="Sledeci" previous-text="Prethodni" num-pages="rbrPreseka"-->
+        <!--&gt;</ul>-->
+
+
+        <table class="table table-hover">
+            <tr>
+                <th>
+                    Duznik
+                </th>
+                <!--<th>-->
+                    <!--Racun duznika-->
+                <!--</th>-->
+                <th>
+                    Primalac
+                </th>
+                <!--<th>-->
+                    <!--Racun primaoca-->
+                <!--</th>-->
+                <!--<th>
+                    Poziv na broj zaduzenja
+                </th>
+                <th>
+                    Model zaduzenja
+                </th>
+                <th>
+                    Poziv na broj odobrenja
+                </th>
+                <th>
+                    Model odobrenja
+                </th>-->
+                <th>
+                    Svrha placanja
+                </th>
+                <th>
+                    Smer
+                </th>
+                <th>
+                    Iznos
+                </th>
+                <th>
+                    Datum naloga
+                </th>
+            </tr>
+            <tr ng-repeat="zapis in pages[currentPage-1]">
+
+                <td>
+                    {{zapis.duznik}}
+                </td>
+                <!--<td>-->
+                    <!--{{zapis.duznikRacun}}-->
+                <!--</td>-->
+                <td>
+                    {{zapis.primalac}}
+                </td>
+                <!--<td>-->
+                    <!--{{zapis.primalacRacun}}-->
+                <!--</td>-->
+                <!--<td>
+                    {{zapis.pozivNaBrojZaduzenja}}
+                </td>
+                <td>
+                    {{zapis.modelZaduzenja}}
+                </td>
+                <td>
+                    {{zapis.pozivNaBrojOdobrenja}}
+                </td>
+                <td>
+                    {{zapis.modelOdobrenja}}
+                </td>-->
+                <td>
+                    {{zapis.svrhaPlacanja}}
+                </td>
+                <td>
+                    {{zapis.smer}}
+                </td>
+                <td>
+                    {{zapis.iznos}}
+                </td>
+                <td>
+                    {{zapis.datumValute|date:'dd.MM.yyyy'}}
+                </td>
+
+            </tr>
+        </table>
+    </div>
+
+
+
+</table>
 
 
 
