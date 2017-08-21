@@ -14,6 +14,7 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 public class Convertor {
 
@@ -70,6 +71,7 @@ public class Convertor {
     //konverzija vremena, ne znam da li valja
     public XMLGregorianCalendar DateToXMLGregorian(Date date) {
         GregorianCalendar c = new GregorianCalendar();
+        c.setTimeZone(TimeZone.getDefault());
         c.setTime(date);
         XMLGregorianCalendar xml = null;
         try {
