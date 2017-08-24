@@ -86,4 +86,14 @@ public class Convertor {
     public Date XMLGregorianToDate(XMLGregorianCalendar xml) {
         return xml.toGregorianCalendar().getTime();
     }
+
+    public DTOUplatnica purge(DTOUplatnica dtoUplatnica) {
+        String duznikNaziv = dtoUplatnica.getDuznikNaziv().split("[\\r\\n]+")[0];
+        String primalacNaziv = dtoUplatnica.getPrimalacNaziv().split("[\\r\\n]+")[0];
+
+        dtoUplatnica.setDuznikNaziv(duznikNaziv);
+        dtoUplatnica.setPrimalacNaziv(primalacNaziv);
+
+        return dtoUplatnica;
+    }
 }

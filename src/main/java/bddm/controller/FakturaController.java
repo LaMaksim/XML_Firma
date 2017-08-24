@@ -82,7 +82,7 @@ public class FakturaController {
         fk = fakturaService.getOne(id);
 
         if (fk != null) {
-            PaymentStatus status = fakturaService.pay(fk, dtoUplatnica);
+            PaymentStatus status = fakturaService.pay(fk, Convertor.getInstance().purge(dtoUplatnica));
 
             switch(status) {
                 case FAILURE:
