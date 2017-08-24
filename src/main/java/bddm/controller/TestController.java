@@ -111,7 +111,7 @@ public class TestController {
             faktura2.setDobavljacNaziv("Firma8083");
             faktura2.setDobavljacAdresa("Adresa na localhost/8083");
             faktura2.setDobavljacPIB("000008083");
-            faktura2.setDobavljacRacun("084-0000000008083-83");
+            faktura2.setDobavljacRacun("085-0000000008083-83");
             faktura2.setDatum(new Date());
             faktura2.setVrednost(15000.00);
             faktura2.setPorez(1500.00);
